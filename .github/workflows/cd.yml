@@ -1,0 +1,17 @@
+name: Continuous Deployment
+
+on:
+  push:
+    tags:
+      - "*"
+
+permissions:
+  contents: write
+
+jobs:
+  deployment:
+    name: "Deploying something somewhere :rocket:"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deployment
+        run: echo "deploying success"

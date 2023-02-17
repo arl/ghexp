@@ -1,0 +1,9 @@
+on: [push, pull_request]
+name: Continuous Integration
+jobs:
+  deployment:
+    name: "Testing stuff :wrench:"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deployment
+        run: echo "test suite passed"
