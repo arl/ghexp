@@ -1,0 +1,20 @@
+on: [push, pull_request]
+name: Continuous Integration
+jobs:
+  test:
+    name: CI
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Tests
+        run: sleep 20 && echo "100% tests passed"
+
+  deployment:
+    name: CD
+    needs: ["test"]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publishing
+        run: echo "deployment success"

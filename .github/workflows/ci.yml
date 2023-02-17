@@ -1,12 +1,12 @@
-on: [push, pull_request]
-name: Continuous Integration
-jobs:
-  test:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest]
-    runs-on: ${{ matrix.os }}
-    name: CI
-    steps:
-      - name: Tests
-        run: echo "100% tests passed"
+# on: [push, pull_request]
+# name: Continuous Integration
+# jobs:
+#   test:
+#     strategy:
+#       matrix:
+#         os: [ubuntu-latest, macos-latest]
+#     runs-on: ${{ matrix.os }}
+#     name: CI
+#     steps:
+#       - name: Tests
+#         run: echo "100% tests passed"
