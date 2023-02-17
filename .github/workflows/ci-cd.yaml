@@ -37,4 +37,3 @@ jobs:
       - name: Publishing
         run: |
           echo "deployment success"
-          git show-ref
