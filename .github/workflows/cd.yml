@@ -10,8 +10,8 @@ permissions:
 
 jobs:
   deployment:
-    name: "Deploying something somewhere :rocket:"
     runs-on: ubuntu-latest
+    name: CD
     steps:
-      - name: Deployment
-        run: echo "deploying success"
+      - name: Publishing
+        run: echo "deployment success"

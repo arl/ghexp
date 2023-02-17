@@ -1,9 +1,12 @@
 on: [push, pull_request]
 name: Continuous Integration
 jobs:
-  deployment:
-    name: "Testing stuff :wrench:"
-    runs-on: ubuntu-latest
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    name: CI
     steps:
-      - name: Deployment
-        run: echo "test suite passed"
+      - name: Tests
+        run: echo "100% tests passed"
