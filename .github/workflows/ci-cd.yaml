@@ -1,5 +1,5 @@
 on: [push, pull_request]
-name: Continuous Integration
+name: Test, Build and Publish
 jobs:
   test:
     name: CI
@@ -28,7 +28,7 @@ jobs:
       - name: Dump matrix context
         run: echo '${{ toJSON(matrix) }}'
 
-  deployment:
+  publish:
     name: CD
     needs: ["test"]
     runs-on: ubuntu-latest
@@ -37,4 +37,3 @@ jobs:
       - name: Publishing
         run: |
           echo "deployment success"
-          git show-ref
